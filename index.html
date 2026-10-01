@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>15 Anos de Marcos & Perla 💍❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: #fff8f0;
+      color: #4a2630;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       FUNDO ANIMADO
+    ========================== */
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      z-index: -1;
+      animation: floatBlob 8s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      background: #ffb3c6;
+      top: -100px;
+      left: -100px;
+    }
+
+    body::after {
+      background: #ffd166;
+      right: -100px;
+      bottom: -100px;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatBlob {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(40px, 30px) scale(1.2);
+      }
+    }
+
+    /* =========================
+       ELEMENTOS FLUTUANTES
+    ========================== */
+
+    .floating {
+      position: fixed;
+      pointer-events: none;
+      z-index: 10;
+      animation: floatAround linear infinite;
+      opacity: 0.8;
+    }
+
+    .heart1 {
+      left: 8%;
+      top: 20%;
+      font-size: 25px;
+      animation-duration: 7s;
+    }
+
+    .heart2 {
+      right: 8%;
+      top: 35%;
+      font-size: 30px;
+      animation-duration: 9s;
+    }
+
+    .ring {
+      left: 15%;
+      bottom: 15%;
+      font-size: 25px;
+      animation-duration: 8s;
+    }
+
+    .confetti {
+      right: 15%;
+      bottom: 20%;
+      font-size: 28px;
+      animation-duration: 10s;
+    }
+
+    @keyframes floatAround {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-40px) rotate(15deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(-15deg);
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #c85c76;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .rings {
+      font-size: 60px;
+      animation: ringBounce 2s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    @keyframes ringBounce {
+      0%, 100% {
+        transform: rotate(-8deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(8deg) scale(1.1);
+      }
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(50px, 10vw, 100px);
+      line-height: 0.95;
+      color: #8d3b50;
+      margin: 15px 0;
+    }
+
+    h1 span {
+      color: #e45775;
+    }
+
+    .years {
+      display: inline-block;
+      background: #e45775;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 22px;
+      font-weight: bold;
+      transform: rotate(-3deg);
+      box-shadow: 0 8px 20px rgba(228, 87, 117, 0.3);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 25px auto;
+      line-height: 1.6;
+    }
+
+    .funny {
+      font-size: 18px;
+      background: white;
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(100, 50, 50, 0.08);
+      transform: rotate(1deg);
+    }
+
+    .funny strong {
+      color: #e45775;
+    }
+
+    /* =========================
+       SEÇÕES
+    ========================== */
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 42px;
+      color: #8d3b50;
+      margin-bottom: 45px;
+    }
+
+    /* =========================
+       CONTADOR
+    ========================== */
+
+    .countdown-section {
+      background: #8d3b50;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-section::before {
+      content: "❤️ 💍 ❤️ 💍 ❤️";
+      position: absolute;
+      font-size: 70px;
+      opacity: 0.08;
+      white-space: nowrap;
+      top: 20px;
+      left: -50px;
+      transform: rotate(-5deg);
+    }
+
+    .countdown-section .section-title {
+      color: white;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 25px 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: clamp(35px, 6vw, 55px);
+      font-weight: bold;
+    }
+
+    .time-box small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    /* =========================
+       INFORMAÇÕES
+    ========================== */
+
+    .info-card {
+      background: white;
+      border-radius: 30px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(100, 50, 50, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::after {
+      content: "🎉";
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 45px;
+      transform: rotate(15deg);
+    }
+
+    .info-item {
+      margin: 25px 0;
+    }
+
+    .info-icon {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .info-item h3 {
+      color: #e45775;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .info-item p {
+      font-size: 18px;
+    }
+
+    /* =========================
+       HISTÓRIA
+    ========================== */
+
+    .story {
+      text-align: center;
+    }
+
+    .story p {
+      font-size: 20px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .highlight {
+      color: #e45775;
+      font-weight: bold;
+    }
+
+    /* =========================
+       BOTÕES
+    ========================== */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .btn {
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      padding: 17px 28px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-location {
+      background: #e45775;
+      color: white;
+      box-shadow: 0 8px 20px rgba(228, 87, 117, 0.3);
+    }
+
+    /* =========================
+       PRESENTE
+    ========================== */
+
+    .gift {
+      background: #ffd166;
+      border-radius: 30px;
+      padding: 35px;
+      text-align: center;
+      transform: rotate(-1deg);
+    }
+
+    .gift h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .gift p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================== */
+
+    footer {
+      background: #4a2630;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .big-heart {
+      font-size: 45px;
+      animation: heartbeat 1.4s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    footer p {
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================== */
+
+    @media (max-width: 600px) {
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .funny {
+        font-size: 16px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Elementos decorativos -->
+  <div class="floating heart1">❤️</div>
+  <div class="floating heart2">💕</div>
+  <div class="floating ring">💍</div>
+  <div class="floating confetti">🎉</div>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Atenção, testemunhas oficiais dessa história...
+      </div>
+
+      <div class="rings">💍💍</div>
+
+      <h1>
+        Marcos <span>&</span> Perla
+      </h1>
+
+      <div class="years">
+        15 ANOS DE CASADOS! 🥳
+      </div>
+
+      <p class="subtitle">
+        Quinze anos juntos, algumas discussões sobre quem está certo,
+        muitas risadas e uma quantidade inexplicável de "eu te avisei". 😂
+      </p>
+
+      <div class="funny">
+        <strong>Mas eles continuam juntos!</strong><br>
+        Então alguma coisa estão fazendo certo. ❤️
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       CONTAGEM
+  ========================== -->
+
+  <section class="countdown-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        A festa está chegando! 🎉
+      </h2>
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Dias</small>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Segundos</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EVENTO
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Anota aí! 📅
+      </h2>
+
+      <div class="info-card">
+
+        <div class="info-item">
+          <span class="info-icon">📅</span>
+          <h3>Quando?</h3>
+          <p>Domingo, 11 de outubro de 2026</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">⏰</span>
+          <h3>Que horas?</h3>
+          <p>Às 17:00 horas</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">🏠</span>
+          <h3>Onde?</h3>
+          <p>Na casa do casal</p>
+        </div>
+
+        <div class="buttons">
+
+          <!--
+            TROQUE O NÚMERO ABAIXO PELO WHATSAPP DO CASAL.
+            Formato: 55 + DDD + número
+            Exemplo: 5571999999999
+          -->
+
+          <a
+            class="btn btn-whatsapp"
+            href="https://wa.me/5571988664422?text=Ol%C3%A1%20Marcos%20e%20Perla!%20Confirmo%20minha%20presen%C3%A7a%20na%20comemora%C3%A7%C3%A3o%20dos%2015%20anos%20de%20casamento!%20%F0%9F%8E%89%F0%9F%92%8D"
+            target="_blank"
+          >
+            💬 Confirmar presença
+          </a>
+
+          <!--
+            TROQUE O LINK ABAIXO PELO LINK DO GOOGLE MAPS
+            DA CASA DO CASAL.
+          -->
+
+          <a
+            class="btn btn-location"
+            href="https://maps.app.goo.gl/9jZFjRrRUULJJNE57"
+            target="_blank"
+          >
+            📍 Ver localização
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HISTÓRIA
+  ========================== -->
+
+  <section>
+
+    <div class="container story">
+
+      <h2 class="section-title">
+        15 anos não são 15 dias! ❤️
+      </h2>
+
+      <p>
+        Parece que foi ontem...
+        ou pelo menos é isso que eles dizem! 😂
+        <br><br>
+
+        Foram <span class="highlight">15 anos de amor</span>,
+        parceria, histórias, desafios, conquistas,
+        viagens, risadas e, claro, aquela tradicional
+        discussão para decidir o que vai ter para o jantar.
+        🍕😂
+        <br><br>
+
+        E depois de tudo isso, eles decidiram que
+        merecem uma festa para comemorar!
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PRESENTE
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="gift">
+
+        <h2>🎁 Sobre presentes...</h2>
+
+        <p>
+          Sua presença já é um presentão!
+          <br><br>
+          Mas se você insistir em dar um presente...
+          ninguém aqui vai reclamar. 😂
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONFIRMAÇÃO FINAL
+  ========================== -->
+
+  <section>
+
+    <div class="container" style="text-align:center;">
+
+      <h2 class="section-title">
+        E aí, você vem? 👀
+      </h2>
+
+      <p style="font-size:20px; line-height:1.6;">
+        Não vale dizer "vou ver e te aviso". 😅
+        <br>
+        Confirma logo para a gente saber quantas pessoas
+        vão aparecer para comer o bolo! 🎂😂
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/5571988664422?text=Oi!%20Eu%20vou%20comemorar%20com%20voc%C3%AAs!%20%F0%9F%8E%89%F0%9F%92%95"
+          target="_blank"
+        >
+          ❤️ EU VOU!
+        </a>
+
+        <a
+          class="btn btn-location"
+          href="https://maps.app.goo.gl/9jZFjRrRUULJJNE57"
+          target="_blank"
+        >
+          📍 Quero saber onde é
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="big-heart">❤️</div>
+
+    <h2>
+      Marcos & Perla
+    </h2>
+
+    <p>
+      15 anos de casamento e ainda contando...
+    </p>
+
+    <p>
+      11.10.2026 • 17h
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    /*
+      ============================================
+      CONTAGEM REGRESSIVA
+      ============================================
+
+      Data:
+      11 de outubro de 2026
+      17:00
+
+      Horário de Brasília:
+      UTC-3
+    */
+
+    const targetDate = new Date("2026-10-11T17:00:00-03:00").getTime();
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+      }
+
+      const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /*
+      ============================================
+      CORAÇÕES ALEATÓRIOS
+      ============================================
+    */
+
+    const emojis = ["❤️", "💕", "💖", "💍", "✨", "🎉"];
+
+    function createFloatingEmoji() {
+
+      const emoji = document.createElement("div");
+
+      emoji.textContent =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+      emoji.style.position = "fixed";
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.bottom = "-40px";
+      emoji.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+      emoji.style.pointerEvents = "none";
+      emoji.style.zIndex = "20";
+
+      const duration =
+        5 + Math.random() * 5;
+
+      emoji.style.animation =
+        `rise ${duration}s linear forwards`;
+
+      document.body.appendChild(emoji);
+
+      setTimeout(() => {
+        emoji.remove();
+      }, duration * 1000);
+    }
+
+    const style = document.createElement("style");
+
+    style.innerHTML = `
+      @keyframes rise {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+
+        10% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(-110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+
+    setInterval(createFloatingEmoji, 1800);
+
+  </script>
+
+</body>
+</html>
